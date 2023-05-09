@@ -4,7 +4,7 @@
 import Image from "next/image";
 
 // INTERNAL IMPORTS
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/images/logo.png";
 import { BarsIcon, GlassIcon, PhoneIcon, UserIcon } from "@/components/Icons";
 
 export default function Navbar() {
@@ -21,9 +21,9 @@ export default function Navbar() {
             src={Logo}
             alt="logo"
             width={63}
-            height={40}
+            height={63}
             priority
-            className="h-auto w-auto cursor-pointer"
+            className="cursor-pointer"
           />
         </div>
         <div className="flex items-center gap-8">

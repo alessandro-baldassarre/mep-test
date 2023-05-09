@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-effra)"],
       },
+      screens: {
+        "3xl": "1600px",
+      },
     },
   },
   plugins: [],

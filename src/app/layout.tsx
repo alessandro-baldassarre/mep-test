@@ -37,23 +37,20 @@ export default function RootLayout({
   return (
     <html lang="it" className={effra.variable}>
       <body>
-        <div className="bg-[#393939] px-10 py-[10px] font-sans text-lg text-white">
-          <Link
-            href="/it-it/promotion"
-            className="flex items-center hover:underline"
-          >
+        <div className="bg-[#393939] px-10 py-[10px] font-sans text-lg leading-8 text-white">
+          <Link href="/it-it/promotion" className="hover:underline">
             Spazi di lavoro impareggiabili. Ottimi sconti. Paghi il 25% in meno.
             *Si applicano Termini e condizioni
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="h-4 w-4"
+              className="inline-block w-4 align-middle"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </Link>

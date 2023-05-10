@@ -1,11 +1,18 @@
 // GLOBAL IMPORTS
 import Link from "next/link";
 import localFont from "next/font/local";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 // INTERNAL IMPORTS
 import "./globals.css";
-import { ChevronRight } from "@/components/Icons";
 
+// Fontawesome config
+config.autoAddCss = false;
+
+// Effra font
 const effra = localFont({
   src: [
     {
@@ -40,12 +47,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="it" className={effra.variable}>
-      <body>
-        <div className="bg-[#393939] px-10 py-[10px] font-sans text-lg leading-8 text-white">
+      <body className="font-sans">
+        <div className="bg-[#393939] px-10 py-2 text-lg leading-8 text-white">
           <Link href="/it-it/promotion" className="hover:underline">
             Spazi di lavoro impareggiabili. Ottimi sconti. Paghi il 25% in meno.
             *Si applicano Termini e condizioni
-            <ChevronRight />
+            <FontAwesomeIcon
+              icon={faChevronRight}
+              className="text-sm font-thin"
+            />
           </Link>
         </div>
         {children}

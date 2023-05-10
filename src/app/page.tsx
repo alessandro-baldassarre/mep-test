@@ -1,11 +1,13 @@
 // GLOBAL IMPORTS
 import Image from "next/image";
+import Link from "next/link";
 
 // INTERNAL IMPORTS
 import Navbar from "@/components/Navbar";
-import { ChevronDown, GlassIcon } from "@/components/Icons";
-import { searchLinks } from "@/data";
+import { ctaLinks, searchLinks } from "@/data";
 import { location } from "@/assets/images";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
@@ -14,15 +16,15 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[420px] overflow-hidden font-sans text-white">
+      <section className="relative h-[420px] overflow-hidden text-white">
         {/* Background Image */}
-        <div className="h-full scale-[1.7] bg-[url('../assets/images/hero.png')] bg-[center_left_-11rem] md:scale-100 md:bg-cover md:bg-center"></div>
+        <div className="h-full bg-[url('../assets/images/hero.png')] bg-cover bg-[center_left_-19.4rem] sm:scale-[1.7] sm:bg-[center_left_-11rem] md:scale-100 md:bg-cover md:bg-center"></div>
         {/* Title */}
-        <div className="absolute top-28 w-full text-center">
+        <div className="absolute top-28 w-full px-4 text-center">
           <h3 className="mb-2 text-sm lg:text-lg">
             Da una singola postazione a un intero edificio. A te la scelta.
           </h3>
-          <h1 className="text-4xl lg:text-[56px]">
+          <h1 className="text-[40px] lg:text-[56px]">
             Uffici a modo tuo
             <span className="font-serif text-red-600">.</span>
           </h1>
@@ -40,7 +42,7 @@ export default function Home() {
                 key={link.id}
                 className={
                   link.id === "office"
-                    ? `border-b-2 border-b-red-600 md:py-2`
+                    ? `border-b-red-600 md:border-b-2 md:py-2`
                     : `md:py-2`
                 }
               >
@@ -52,18 +54,21 @@ export default function Home() {
             ))}
           </ul>
           <div className="py-8 md:hidden">
-            <ChevronDown />
+            <FontAwesomeIcon icon={faChevronDown} />
           </div>
         </div>
         {/* bottom */}
-        <div className="flex h-1/2 items-center gap-4 rounded-b-2xl bg-[#F4F3F0] px-4 md:px-8">
-          <form action="" className="relative w-full md:w-4/6">
+        <div className="flex h-1/2 items-center gap-4 rounded-b-2xl bg-[#F4F3F0] p-4 md:p-7 md:px-8">
+          <form
+            action=""
+            className="flex h-full w-full items-center justify-between gap-4 rounded-lg border border-gray-300 bg-white px-4 md:w-4/6"
+          >
             <input
               type="text"
               placeholder="Cerca qui"
-              className="border-gray-160 w-full rounded-lg border p-4"
+              className="w-16 appearance-none rounded-lg"
             />
-            <span className="absolute right-8 top-1/4 flex items-center gap-2 text-red-600 underline underline-offset-2">
+            <span className="flex items-center gap-2 text-red-600 underline underline-offset-2">
               Cerca nelle vicinanze
               <Image
                 src={location}
@@ -75,14 +80,36 @@ export default function Home() {
             </span>
           </form>
           <button className="hidden flex-grow items-center justify-center gap-2 rounded-lg bg-red-600 p-4 uppercase text-white md:flex">
-            <GlassIcon />
+            <FontAwesomeIcon icon={faSearch} />
             Cerca
           </button>
         </div>
-
-        {/* Section CTA */}
-        <section></section>
       </div>
+
+      {/* Section CTA */}
+      <section className="mb-12 grid grid-cols-1 grid-rows-6 gap-4 px-6 md:grid-cols-2 md:grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 lg:px-0 2xl:grid-cols-6 2xl:grid-rows-1">
+        {ctaLinks.map((link) => (
+          <div
+            key={link.id}
+            className="rounded-2xl border-2 border-[#EAECEE] p-6 hover:shadow-2xl"
+          >
+            <Link
+              href={`/it-it/${link.id}`}
+              className="flex items-start gap-5 2xl:flex-col"
+            >
+              <div className="relative h-10 w-10 2xl:h-12 2xl:w-12">
+                <Image src={link.icon} alt="icon" fill priority />
+              </div>
+              <div>
+                <h3 className="mb-4 text-red-600 underline underline-offset-4">
+                  {link.title}
+                </h3>
+                <p className="mb-4 text-sm text-gray-400 ">{link.subtitle}</p>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </section>
     </main>
   );
 }

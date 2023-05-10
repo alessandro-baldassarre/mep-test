@@ -4,11 +4,8 @@ import Image from "next/image";
 // INTERNAL IMPORTS
 import Navbar from "@/components/Navbar";
 import { ChevronDown, GlassIcon } from "@/components/Icons";
-import OfficeIcon from "@/assets/images/office.svg";
-import Coworking from "@/assets/images/coworking.svg";
-import VirtualOffice from "@/assets/images/virtualoffice.svg";
-import Meetings from "@/assets/images/meetingrooms.svg";
-import ViewFinder from "@/assets/images/location.svg";
+import { searchLinks } from "@/data";
+import { location } from "@/assets/images";
 
 export default function Home() {
   return (
@@ -33,34 +30,26 @@ export default function Home() {
       </section>
 
       {/* Search Banner */}
-      <div className="relative -top-28 mx-auto h-44 w-[90%] rounded-2xl bg-white md:-top-28 md:h-56 md:max-w-2xl lg:max-w-3xl">
+      <div className="relative -top-28 mx-auto h-44 w-[90%] rounded-2xl bg-white shadow-3xl md:-top-28 md:h-56 md:max-w-2xl lg:max-w-3xl">
         {/* Top */}
         <div className="flex h-1/2 cursor-pointer justify-between overflow-hidden px-6">
           <ul className="flex w-full flex-col gap-8 py-8 text-sm md:flex-row md:justify-center">
-            <li className="md:border-b-2 md:border-b-red-600 md:py-2">
-              <div className="flex items-center gap-3">
-                <Image src={OfficeIcon} alt="icon" width={24} height={24} />
-                Uffici
-              </div>
-            </li>
-            <li className="md:py-2">
-              <div className="flex items-center gap-4 ">
-                <Image src={Coworking} alt="icon" width={24} height={24} />
-                Coworking
-              </div>
-            </li>
-            <li className="md:py-2">
-              <div className="flex items-center gap-4">
-                <Image src={VirtualOffice} alt="icon" width={24} height={24} />
-                Uffici virtuali
-              </div>
-            </li>
-            <li className="md:py-2">
-              <div className="flex items-center gap-4">
-                <Image src={Meetings} alt="icon" width={24} height={24} />
-                Sale riunioni
-              </div>
-            </li>
+            {searchLinks.map((link) => (
+              // TODO: Manage active link with useState and onClick
+              <li
+                key={link.id}
+                className={
+                  link.id === "office"
+                    ? `border-b-2 border-b-red-600 md:py-2`
+                    : `md:py-2`
+                }
+              >
+                <div className="flex items-center gap-3">
+                  <Image src={link.icon} alt="icon" width={24} height={24} />
+                  {link.title}
+                </div>
+              </li>
+            ))}
           </ul>
           <div className="py-8 md:hidden">
             <ChevronDown />
@@ -77,7 +66,7 @@ export default function Home() {
             <span className="absolute right-8 top-1/4 flex items-center gap-2 text-red-600 underline underline-offset-2">
               Cerca nelle vicinanze
               <Image
-                src={ViewFinder}
+                src={location}
                 alt="icon"
                 width={16}
                 height={16}
@@ -90,6 +79,9 @@ export default function Home() {
             Cerca
           </button>
         </div>
+
+        {/* Section CTA */}
+        <section></section>
       </div>
     </main>
   );

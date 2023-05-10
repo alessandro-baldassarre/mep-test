@@ -4,8 +4,8 @@
 import Image from "next/image";
 
 // INTERNAL IMPORTS
-import Logo from "@/assets/images/logo.png";
 import { BarsIcon, GlassIcon, PhoneIcon, UserIcon } from "@/components/Icons";
+import { logo } from "@/assets/images";
 
 export default function Navbar() {
   return (
@@ -18,7 +18,7 @@ export default function Navbar() {
         </div>
         <div>
           <Image
-            src={Logo}
+            src={logo}
             alt="logo"
             width={63}
             height={63}

@@ -26,7 +26,7 @@ export default function Card({ link }: CardProps) {
           <h3 className="mb-4 text-red-600 underline underline-offset-4">
             {link.title}
           </h3>
-          <p className="mb-4 text-sm text-gray-400 ">{link.subtitle}</p>
+          <h6 className="text-sm text-gray-400 ">{link.subtitle}</h6>
         </div>
       </Link>
     </div>

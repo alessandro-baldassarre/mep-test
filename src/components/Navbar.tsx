@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <>
       {/* Mobile NavBar */}
-      <nav className="flex h-16 items-center justify-between px-4 md:hidden">
+      <nav className="flex h-16 items-center justify-between px-6 md:hidden">
         {/* left */}
         <div className="flex items-center gap-10">
           <FontAwesomeIcon icon={faBarsStaggered} className="text-[#393939]" />
@@ -130,7 +130,7 @@ export default function Navbar() {
           </div>
           <div className="flex h-full cursor-pointer items-center gap-2 border-x border-gray-300 px-8 text-[#393939]">
             <FontAwesomeIcon icon={faSearch} className="text-lg" />
-            Cerca una sede
+            <span className="hidden 2xl:inline-block">Cerca una sede</span>
           </div>
           <div className="flex h-full items-center pl-4">
             <FontAwesomeIcon

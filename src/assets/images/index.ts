@@ -11,6 +11,15 @@ import solution from "@/assets/images/solution_icon.svg";
 import virtual from "@/assets/images/virtual_icon.svg";
 import workspace from "@/assets/images/workspace_icon.svg";
 import app_icon from "@/assets/images/app_icons.svg";
+import talkexpert from "@/assets/images/talkexpert.webp";
+import emergency from "@/assets/images/emergency.webp";
+import solution_membership from "@/assets/images/solutionmembership.webp";
+import covid from "@/assets/images/covid.webp";
+import mobile_app from "@/assets/images/mobileapp.webp";
+import business_address from "@/assets/images/businessaddress.webp";
+import lounges from "@/assets/images/lounges.webp";
+import about_regus from "@/assets/images/aboutregus.webp";
+import day_office from "@/assets/images/dayoffice.webp";
 
 export {
   office,
@@ -26,4 +35,13 @@ export {
   virtual,
   workspace,
   app_icon,
+  talkexpert,
+  emergency,
+  solution_membership,
+  covid,
+  mobile_app,
+  business_address,
+  lounges,
+  about_regus,
+  day_office,
 };

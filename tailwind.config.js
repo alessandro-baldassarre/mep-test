@@ -15,6 +15,7 @@ module.exports = {
       },
       boxShadow: {
         "3xl": "0px 24px 128px 0px rgb(57 57 57 / 20%)",
+        "4xl": "0px 0px 60px 0px rgb(57 57 57 / 60%)",
       },
     },
   },

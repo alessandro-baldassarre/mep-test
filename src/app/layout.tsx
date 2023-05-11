@@ -48,6 +48,7 @@ export default function RootLayout({
   return (
     <html lang="it" className={effra.variable}>
       <body className="font-sans">
+        {/* Top banner */}
         <div className="bg-[#393939] px-10 py-2 text-lg leading-8 text-white">
           <Link href="/it-it/promotion" className="hover:underline">
             Spazi di lavoro impareggiabili. Ottimi sconti. Paghi il 25% in meno.

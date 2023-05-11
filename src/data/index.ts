@@ -9,7 +9,97 @@ import {
   virtual,
   virtual_office,
   workspace,
+  solution_membership,
+  emergency,
+  talkexpert,
+  day_office,
+  about_regus,
+  business_address,
+  lounges,
+  mobile_app,
+  covid,
 } from "@/assets/images";
+
+export const navLinks = [
+  {
+    id: "1",
+    linkName: "Che cosa facciamo",
+    subTitle: "Scopri tutte le soluzioni",
+    subLinks: [
+      { id: "uffici", linkName: "Uffici", icon: office },
+      { id: "coworking", linkName: "Coworking", icon: coworking },
+      {
+        id: "sol-membership",
+        linkName: "Membership",
+        icon: solution_membership,
+      },
+      {
+        id: "virtual-office",
+        linkName: "Uffici virtuali",
+        icon: virtual_office,
+      },
+      { id: "meetingrooms", linkName: "Sala riunioni", icon: meetings },
+      { id: "rec-workplace", linkName: "Workplace recovery", icon: emergency },
+    ],
+  },
+  {
+    id: "2",
+    linkName: "Inizia",
+    subTitle: "",
+    subLinks: [
+      { id: "expert", linkName: "Contatta esperto", icon: talkexpert },
+      { id: "office", linkName: "Trova ufficio", icon: office },
+      {
+        id: "virtual-office",
+        linkName: "Acquista un ufficio virtuale",
+        icon: virtual_office,
+      },
+      {
+        id: "meeting",
+        linkName: "Prenota una sala riunioni",
+        icon: meetings,
+      },
+      {
+        id: "membership",
+        linkName: "Acquista una membership",
+        icon: solution_membership,
+      },
+      {
+        id: "temp-office",
+        linkName: "Prenota uffici temporanei",
+        icon: day_office,
+      },
+    ],
+  },
+  {
+    id: "3",
+    linkName: "Scopri Regus",
+    subTitle: "",
+    subLinks: [
+      { id: "about", linkName: "Chi siamo", icon: about_regus },
+      {
+        id: "business-address",
+        linkName: "Le nostre sedi",
+        icon: business_address,
+      },
+      {
+        id: "lounges",
+        linkName: "Passa all'ibrido",
+        icon: lounges,
+      },
+      {
+        id: "app",
+        linkName: "Scarica la nostra app",
+        icon: mobile_app,
+      },
+      {
+        id: "covid",
+        linkName: "La nostra risposta al COVID-19",
+        icon: covid,
+      },
+    ],
+  },
+];
 
 export const searchLinks = [
   {
